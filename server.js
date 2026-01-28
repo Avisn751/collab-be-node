@@ -1,8 +1,10 @@
 const { createServer } = require('node:http');
-const express = require('express')
+const express = require('express');
+const { configDotenv } = require('dotenv');
+configDotenv()
 const app = express()
-const hostname = 'localhost';
-const port = 3000;
+const hostname = process.env.HOST;
+const port = process.env.PORT;
 
 const server = createServer(app);
 
